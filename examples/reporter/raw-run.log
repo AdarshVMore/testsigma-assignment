@@ -1,0 +1,53 @@
+
+[2mRunning [22m4[2m tests using [22m1[2m worker[22m
+
+[screenshot] examples/self-healing/output/01-before-rename.png
+[screenshot] examples/self-healing/output/02-after-rename-before-heal.png
+[healing] status=healed score=0.867 margin=0.5 candidatesConsidered=2
+[healing]   text: value=1 weight=0.25 applicable=true (target="Submit Order" candidate="Submit Order")
+[healing]   ariaLabel: value=0 weight=0.15 applicable=false (target="" candidate="")
+[healing]   role: value=1 weight=0.1 applicable=true (target=button candidate=button)
+[healing]   tag: value=1 weight=0.1 applicable=true (target=button candidate=button)
+[healing]   classList: value=0 weight=0.1 applicable=true (target=[btn-legacy] candidate=[button-refactored primary-refactored])
+[healing]   formAttributes: value=1 weight=0.1 applicable=true (1/1 of name/placeholder/type matched)
+[healing]   otherAttributes: value=0 weight=0.1 applicable=false (target has no data-* / stable attributes to match)
+[healing]   domContext: value=1 weight=0.1 applicable=true (ancestorMatch=1.00 positionMatch=1.00)
+[screenshot] examples/self-healing/output/03-after-heal-and-click.png
+  [32m✓[39m  [2m1 [22mexamples/self-healing/demo.spec.ts:14:1 › self-healing locator survives an id/class rename after a simulated deploy[2m (504ms)[22m
+[healing] status=ambiguous margin=0.031 candidatesConsidered=3
+  [32m✓[39m  [2m2 [22mexamples/self-healing/demo.spec.ts:86:1 › self-healing reports ambiguous instead of guessing among duplicate candidates[2m (72ms)[22m
+  [31m✘[39m  [2m3 [22m[31mexamples/self-healing/demo.spec.ts:104:1 › example of a genuine failure (kept intentionally so the report shows a real red result)[39m[2m (1.0s)[22m
+  [32m-[39m  [2m4 [22m[36mexamples/self-healing/demo.spec.ts:109:6 › example of a skipped test (kept intentionally so the report shows a real skip)[39m
+
+
+[31m  1) examples/self-healing/demo.spec.ts:104:1 › example of a genuine failure (kept intentionally so the report shows a real red result) [39m
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('#only-btn')
+    Expected: [32m"Wrong Expected Text"[39m
+    Received: [31m"Only Button"[39m
+    Timeout:  1000ms
+
+    Call log:
+    [2m  - Expect "toHaveText" with timeout 1000ms[22m
+    [2m  - waiting for locator('#only-btn')[22m
+    [2m    11 × locator resolved to <button id="only-btn">Only Button</button>[22m
+    [2m       - unexpected value "Only Button"[22m
+
+
+    [0m [90m 104 |[39m test([32m"example of a genuine failure (kept intentionally so the report shows a real red result)"[39m[33m,[39m [36masync[39m ({ page }) [33m=>[39m {
+     [90m 105 |[39m   [36mawait[39m page[33m.[39msetContent([32m`<button id="only-btn">Only Button</button>`[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 106 |[39m   [36mawait[39m expect(page[33m.[39mlocator([32m"#only-btn"[39m))[33m.[39mtoHaveText([32m"Wrong Expected Text"[39m[33m,[39m { timeout[33m:[39m [35m1000[39m })[33m;[39m
+     [90m     |[39m                                           [31m[1m^[22m[39m
+     [90m 107 |[39m })[33m;[39m
+     [90m 108 |[39m
+     [90m 109 |[39m test[33m.[39mskip([32m"example of a skipped test (kept intentionally so the report shows a real skip)"[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+    [2m    at /Users/adarshvitthalmore/Code/testsigma-assignment/examples/self-healing/demo.spec.ts:106:43[22m
+
+[2m    Error Context: packages/self-healing/test-results/demo-example-of-a-genuine--422af-rt-shows-a-real-red-result-/error-context.md[22m
+
+[31m  1 failed[39m
+[31m    examples/self-healing/demo.spec.ts:104:1 › example of a genuine failure (kept intentionally so the report shows a real red result) [39m
+[33m  1 skipped[39m
+[32m  2 passed[39m[2m (2.5s)[22m

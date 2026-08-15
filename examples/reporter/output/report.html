@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Self-Healing Locator — Test Report</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2rem; background: #f7f7f9; color: #1a1a1e;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  h1 { margin: 0 0 1rem; font-size: 1.4rem; }
+  .summary { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .stat {
+    background: #fff; border: 1px solid #e2e2e8; border-radius: 8px;
+    padding: 0.75rem 1.25rem; min-width: 80px; text-align: center;
+  }
+  .stat-value { display: block; font-size: 1.5rem; font-weight: 600; }
+  .stat-label { display: block; font-size: 0.75rem; color: #6b6b76; text-transform: uppercase; letter-spacing: 0.04em; }
+  .stat-passed .stat-value { color: #1a8a4a; }
+  .stat-failed .stat-value { color: #c62828; }
+  .stat-skipped .stat-value { color: #8a8a94; }
+  main { display: flex; flex-direction: column; gap: 0.75rem; max-width: 900px; }
+  .result { background: #fff; border: 1px solid #e2e2e8; border-left-width: 4px; border-radius: 8px; padding: 1rem 1.25rem; }
+  .result.status-passed { border-left-color: #1a8a4a; }
+  .result.status-failed { border-left-color: #c62828; }
+  .result.status-skipped { border-left-color: #8a8a94; }
+  .result-header { display: flex; align-items: center; gap: 0.75rem; }
+  .badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 1.5rem; height: 1.5rem; border-radius: 999px; font-size: 0.85rem; font-weight: 700; color: #fff;
+  }
+  .status-passed .badge { background: #1a8a4a; }
+  .status-failed .badge { background: #c62828; }
+  .status-skipped .badge { background: #8a8a94; }
+  .name { flex: 1; font-weight: 500; word-break: break-word; }
+  .duration { color: #6b6b76; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+  .error {
+    margin: 0.75rem 0 0; padding: 0.75rem; background: #fff5f5; border: 1px solid #f3caca;
+    border-radius: 6px; font-size: 0.8rem; overflow-x: auto; white-space: pre-wrap; word-break: break-word;
+  }
+  .screenshot { margin-top: 0.75rem; max-width: 100%; border: 1px solid #e2e2e8; border-radius: 6px; }
+  .screenshot-missing { margin-top: 0.5rem; font-size: 0.8rem; color: #8a8a94; font-style: italic; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Self-Healing Locator — Test Report</h1>
+  <div class="summary">
+    <div class="stat"><span class="stat-value">4</span><span class="stat-label">Total</span></div>
+    <div class="stat stat-passed"><span class="stat-value">2</span><span class="stat-label">Passed</span></div>
+    <div class="stat stat-failed"><span class="stat-value">1</span><span class="stat-label">Failed</span></div>
+    <div class="stat stat-skipped"><span class="stat-value">1</span><span class="stat-label">Skipped</span></div>
+    <div class="stat"><span class="stat-value">67%</span><span class="stat-label">Pass rate</span></div>
+    <div class="stat"><span class="stat-value">1.58s</span><span class="stat-label">Duration</span></div>
+  </div>
+</header>
+<main>
+<article class="result status-passed">
+  <div class="result-header">
+    <span class="badge">✓</span>
+    <span class="name">self-healing locator survives an id/class rename after a simulated deploy</span>
+    <span class="duration">504ms</span>
+  </div>
+  
+  <img class="screenshot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzdefiVA/7w8YOQhAoxNEOiRRoGJbtpc5kJhbJMIYwQRgyNfcnFZM2SrIOpLNVFlko0WcqWQRrJEGUpIUqUED2f53s/c67v0x7m96PP6/XHue5zf+9zn/u+v3+9z+csVRYsWFACAACAld2qJQAAAEhAAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSqLKUv/Xr12/OnDmTJ08uraTq1q279tprd+7ceaH1vXr1mjVr1sSJE0tUaNSoUY0aNXr06FECAAD42VplwYIFi/1D1O9aa63VqlWr0kpt5MiRX375ZeUGjvqtWrVqhw4dSlQyaNCgefPmaWAAAODna4lvgY7Z70pfvyHOMc608pqZM2eq30XFNYkrUwIAAPjZWuJboFfidz4vZKEzff3110ssjisDAAD8rPkSLAAAAFKoUlpx8+fPv/XWW0ePHj116tTGjRu3a9eudevWpR/V119/fdxxxxWfT15ttdXWW2+9PfbYo23btrG8nHuIg+zZs+eTTz4Zx3bqqae++eabv/71r0s/TOzzjjvueOaZZ6ZNm9aoUaN99923RYsWS9m+e/fuhx12WNOmTUsrIi7siBEjLr744lgeP358gwYN1lxzzUWP5K677hozZsy7776744477rbbbm3atFl11WW8nHHZZZcVh10CAADI5/tMgE888cRLLrlk/fXXj/T9+OOPO3bsGDFW+lFF4N1///1z586tU6dOjRo13nvvvSOPPDJicklf2bWof/zjH9dee+1+++3XqlWrbt26DRw4sPSDnXbaaZdffnmtWrWiIWfMmNG5c+el7zb++sEHH5RW0OzZs6dPnx4Lr7322j777BMXYaENvvzyy7jmZ5555iabbHLIIYd8+umnRx999EUXXbTMPUe6T5o0qQQAAJDSCk+Ao8fuvffemCX+8Y9/jLunnHLKwQcffMMNN0SdFhtEnsVYMqaRdevWrVKlStFv1apVK/46b9687777rrgbY97JkydvsMEG0dKLfa5DDz00GrtYHjJkSJcuXfr163f44YfHA6OQv/32288++ywKuVQRzO+///6cOXPiSWPnsUE08zrrrBNlGEcSSVmzZs04kvJhfA9xXoMHD47BbBxG3I2ojiO55ZZbokXjSGLn8XTlSxRPWrVq1eLuzAqbb755MaGNY4vt469TpkyJE1933XVjZVyxWF577bVjOUbWv/3tbyP1o2zjbpxj7DmuZPlIbr755ueff37UqFExHI678dLA73//+2OPPbZevXrR5HGc8UTxjPEU8dpBbPDVV1/Fxdlss80WOqN48SKuTKwvdl4cWIiVkdYlAACAlcsKT4DXXHPN6LExY8Z88sknxZrrrrvutttuK5YvvPDCaKfmzZs3a9Zs5513njZtWiTidtttF4FabBD12L1791JF0G655ZaxZdx27do1sm3pzxslvP322z/88MOxfOedd+6555477LBDkyZNRowY8cADD2yxxRa/+c1vdtttt4YNGz711FP9+/c//fTTP//888jOGNvGNPhvf/tbp06dSj/AGmusUb169Weffbbo0nDllVdG+cfChAkT4nljJlysj9cC+vbtWyzfdNNN22yzze677x7H9uabb8aae+65p02bNi1atIg1jRo1iprt0KFDXKv69evfcccdxQYxtZ41a1a8shB3d91115deeqnykcSTxhUr6rcQARyz4kceeSSWTzrppHhgXJzGjRvHocaliIuzxx57xJry131FHke9x/8l1sdm8d+MlQMGDIgDi6dr2rTpyJEjSwAAACuXFQ7g1VZbrU+fPg8++GCEa/RSjIKnT59exNj48eN79+59++23RwpGU02aNOm+++476KCDYtJYJNZHH30UkRZ5FiUWJXzMMcfE5DNKePjw4TfeeOMynzrCbNy4ccVy7Pz444+Pw4iVkXwx+YzDmDhxYsReHN5RRx0VWb7hhhtG6UVhxnHGwDYOpvQDxIlfffXVQ4cOjered999Y/nDDz/caqutyhss9u3Zsc2wYcOeeeaZGEFHkxcr33777Rhuv/7663Fx4iWDKOQ48gj1ONRigxjGxvbxXLH86quvxqsJ5R1GGH/xxRfxkIWeKPr/iSeeiPltLL/wwgvxGsHAgQPjmvTo0ePss8+O/ceIuJzovXr1euWVV+K1g3/961/t27ePOXnMmYsDi8F+PDAyuAQAALBy+T6fAY78e+2116J1N9100+uvvz6GsVGbsT4yeOzYsVGbkVtRVtGfs2fPjm1at249aNCg2CB6NVbG1HHUqFFxd6eddopmrlKlSgReMdpdulq1as2bN6989+STT47Jao0aNUaPHn3GGWe8//77EX7VqlX77/1c7e9+97sXX3wxmj+m3FHse++99zK7PRJ322233WyzzaJ44/AiX4v10ZwxSG/ZsmUsxwsB66677i677PLOO+8UIboUxVvKy2+3LouLU6oo57iN8XLMkCNi498Rd+PlgNh/8Zb1wv333x8z55iQ//vf/47NoqjLQ+Z4WSHWrLXWWiUAAICVywp/BjiGim+99VY00hEVokgvuOCC88477w9/+EPVqlUjDgcPHhybReXGn4qhaPzpyCOPjD/1798/Br9RvBGrsT4eWN5tDDyX+dTxvDHgLZY333zz4huhV1111ci5mKPGcqTmV199tWgc/ihilhsD0ujGP1SIs7vkkkt69uxZvFG5smIMW4hxcbHQsGHDuC3ePv2LX/yiOPji653jNYK4XX311ZfjKErR3htssMGiv9Icx7bddtsV4VrsMERRb7311sWnkddYY43i+6ije6N4n3322ajfYrP69esXXR2hvvzfsw0AAPDzssIT4Jj9tm3bthxgEVcx24yFDz74YMCAAVG/jz766IwZMx544IGYOhYpGJPSiNI+ffq88sorHTt2LP2n0GLq+2yFm2666fzzz1/6806dOnXgwIHl31sqfylUzJCjfq+++upp06Y98cQT0XiV+/NHVLxjecqUKaX/nHiHDh1KFa8IFN9uVZ5Ov/vuu+VHlZdffvnlUkX6lipatPQD7LXXXjfffHPlT01/8sknf//73yPOi7vli7PVVlvF/yuKN5a/+eabmMyXKqbH1atXj3/E4xWGDx9+1llnxTS+VPE27xIAAMBKaoUDeJdddtlwww333XffIUOGRFBFc5566qkxj41JY9GBMZ+MMew111wTyRoLpYpW7NSp06WXXtq8efN69erFmlatWpUqvjErRsHjxo2Lon7qqacWfa4JEyaMGTPmscceu+2222KbeN7K7+MtFM1Wo0aNmKCOHDmyX79+i/5uUKT4G2+8UblLv4dIxDi1aOCHHnooZqejR4/+y1/+EiPTGO3Wrl27VPHlVR9//PGNN95Y/qhtiOOJMWzUbwRqnMIKvbW4+FLoF198caFvCIvJeeynffv2cXHiAo4aNapdu3ZbbrnlySefvNAeiiS+6qqr4uWJG264IQa/xfp4bBxPXK6ZM2fGHPvEE09cZZVVSgAAACu1FQ7gqNknn3wycrdLly4Rw5FSNWvWHDZsWBRUxGHLli233377GPA+/fTT0XvlT5YW7xPu3LlzcTeC+e67737kkUeaNGmy3377RU4vGm/hiiuuiD/FrLJXr17NmjWL7YvUrKxx48Zdu3aNg4k8PvPMM7t16xaj2tmzZ0eNlwetcVRR0fvvv3/pB4gTHzFiRKNGjY477rgWLVoccsghUd333XdfnHgc1RlnnNG7d+/ttttu6NChcVnKj4oujbtxKWL227Nnz4X2WbxkUFnlEK1Tp079+vWPOOKIGKpX3iYueMR2HEmcbGR59+7dd9xxx/79+xe/qFR5J3Xr1r3zzjuj2GODe++9N/ZWPGNcqLgmsedtttlm7Nixffv2XdIvUQEAAKw0VlnsdxeHHj16RCYt5ZHz58+fPn16tN9Cb+idNWtWlSpVqlevXloOsYcYq1b+kdvvZ968eTHejF0taYMYC0cWLnYAG6PpCOzy3ZimFj9utCRx4h999FE810InHnPaeJZFSzLWx+Etz4ecFxX/nc8++2y99dZb7IQ2/hrT5ij/Ze4kDjj+Uwvt5MsKxbdnLY8TTjghxv4lAACAn6fvX55RrTGiXHR9zEVLy23jjTcu/RiqVljKBtWqVSv9SOLEN9lkk0XXr1Vh+dcvj0jWpVzP+Osy67fYbKONNir9qAcGAADws/N9fgYJAAAAfnaWOAGuW7duKYeFzrT4vSIW5coAAAA/a0ucAK+99tojR44sreziHIsvWy6rWbPmoEGDSvz/4pp8v48xAwAA/EQs8UuwShU/4TNnzpzyT/6ufGL2G/Vb/m7qsl69es2aNav41VxCo0aNatSo0aNHjxIAAMDP1tICGAAAAFYavgQLAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUliuA582bN3HixI8++qi0IubPn//yyy+X/ssWLFgwfvz47777rvS9fPjhh3FqpR/DtAqV75YAAAD4yVhGAL/66qstW7bcYYcdrr/++mOPPXajjTbq27dvlG1pWe69995NN930kEMOKf03jRkzpmHDhttuu+3yHNJinXTSSTvttFNUdOkHiIo++OCD43yfe+65Ys0999wTd59//vkSAAAAPw1LC+DHH3+8SZMmkZevvPJKnz59hgwZMnTo0B49ehx22GGlZYkgbNWqVdWqVUv/TbvtttsRRxxR+gF69uz58MMPr7LKKsXdO+644/PPPy+WZ86c2b9//+XZSbwucOGFF8ZClSpVijXvv/9+3K7ozBwAAID/niUGcORfzG9r1659ySWXlLtuxx13PPfccwcNGnT77bcXaxY7Oy3ekLzGGmuUH7gkxcOXNID99ttvS8vyAxu7QYMGe+yxR7Eced+lS5dvvvkmlufOnRsNP27cuOXZSZzv6quvHgurrbZasWazzTaL24033rgEAADAT8MSA/jpp5+OAWanTp0WKsz27dvHbYxGZ8yYcd111zVs2PC+++4rZ2SsPOCAAzp27LjzzjuPHDmy/Ki33nqrXbt2MSlt3Ljxo48+GmuefPLJI4888oQTTjjjjDPWW2+9YmXZ6NGjDz/88PhrzJ9jPy+99FKzZs3i4TGeHTt2bDxXLP/zn/8sb3///ffHNHjdddf905/+FAU7Z86cmOXGmpjuRsfG+uOPPz6S/oILLqhXr17sc8KECfGoSZMmXXTRRb/85S+jtGO3bdu2jZWtW7e++OKLjz766Mcee6xfv35xIlOnTo0dxh7i4GPjq666qvy8cR1atmwZpxYXqvLxFwFcp06dEgAAAD8NSwzg4vurFk24TTbZJG5feOGF6MlIxDfeeOPyyy+P6C0yp8KQDgAAEABJREFUMmqwadOmgwcPHj58ePE24DB79uw2bdpceeWVEydOjDLce++9p0yZ8s4779x555033nhj9erVmzdvXq1atcrPctxxxx111FE33XRT3MbDt99++wjvCPKYtUYJn3baabH89ddfl7ePiXSkb6tWra699torrrjiiy++ePXVV6Phe/To0a1bt2uuuSaeKMbXm2++ea9evSZPnhy38ajI2ueee644zthtPDYWRo0adc4559x9992xHAPhZ599dtNNN42KbtGiRQyEI9rj2eME469DhgyJ5YEDBz744INxgpWPP65GqeKt0SUAAAB+GpYYwNGQcbv22msvtH6ttdaK25jERhsXHwaOmLz00ksHDBgQQTh+/PiI4VhZo0aN/fffv3jILbfcUqVKlaeeeuqBBx6oWbNmqSIyY8C7xRZb7LXXXuedd16Mf2NaW36KqNz33nvvhhtumDt37qGHHhrVGitj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AABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASGHGmvUAAAXeSURBVEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGKAEAEAGAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAKAhgAAIAUBDAAAAApCGAAAABSEMAAAACkIIABAABIQQADAACQggAGAAAgBQEMAABACgIYAACAFAQwAAAAKQhgAAAAUhDAAAAApCCAAQAASEEAAwAAkIIABgAAIAUBDAAAQAoCGAAAgBQEMAAAACkIYAAAAFIQwAAAAKQggAEAAEhBAAMAAJCCAAYAACAFAQwAAEAK/wcAAP//c7kPmwAAAAZJREFUAwATzDRaXO+3JgAAAABJRU5ErkJggg==" alt="Screenshot for self-healing locator survives an id/class rename after a simulated deploy" />
+</article>
+<article class="result status-passed">
+  <div class="result-header">
+    <span class="badge">✓</span>
+    <span class="name">self-healing reports ambiguous instead of guessing among duplicate candidates</span>
+    <span class="duration">72ms</span>
+  </div>
+  
+  
+</article>
+<article class="result status-failed">
+  <div class="result-header">
+    <span class="badge">✘</span>
+    <span class="name">example of a genuine failure (kept intentionally so the report shows a real red result)</span>
+    <span class="duration">1000ms</span>
+  </div>
+  <pre class="error">Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator(&#39;#only-btn&#39;)
+    Expected: &quot;Wrong Expected Text&quot;
+    Received: &quot;Only Button&quot;
+    Timeout:  1000ms
+
+    Call log:
+      - Expect &quot;toHaveText&quot; with timeout 1000ms
+      - waiting for locator(&#39;#only-btn&#39;)
+        11 × locator resolved to &lt;button id=&quot;only-btn&quot;&gt;Only Button&lt;/button&gt;
+           - unexpected value &quot;Only Button&quot;
+
+
+      104 | test(&quot;example of a genuine failure (kept intentionally so the report shows a real red result)&quot;, async ({ page }) =&gt; {
+      105 |   await page.setContent(`&lt;button id=&quot;only-btn&quot;&gt;Only Button&lt;/button&gt;`);
+    &gt; 106 |   await expect(page.locator(&quot;#only-btn&quot;)).toHaveText(&quot;Wrong Expected Text&quot;, { timeout: 1000 });
+          |                                           ^
+      107 | });
+      108 |
+      109 | test.skip(&quot;example of a skipped test (kept intentionally so the report shows a real skip)&quot;, async () =&gt; {
+        at /Users/adarshvitthalmore/Code/testsigma-assignment/examples/self-healing/demo.spec.ts:106:43
+
+    Error Context: packages/self-healing/test-results/demo-example-of-a-genuine--422af-rt-shows-a-real-red-result-/error-context.md</pre>
+  
+</article>
+<article class="result status-skipped">
+  <div class="result-header">
+    <span class="badge">–</span>
+    <span class="name">example of a skipped test (kept intentionally so the report shows a real skip)</span>
+    <span class="duration">—</span>
+  </div>
+  
+  
+</article>
+</main>
+</body>
+</html>
