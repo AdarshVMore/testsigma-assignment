@@ -1,0 +1,28 @@
+{
+  "passed": false,
+  "diffPercentage": 10.2375,
+  "dimensionMismatch": false,
+  "beforeSize": [
+    400,
+    260
+  ],
+  "afterSize": [
+    400,
+    260
+  ],
+  "regions": [
+    {
+      "x": 39,
+      "y": 194,
+      "width": 323,
+      "height": 33,
+      "pixelCount": 10647
+    }
+  ],
+  "config": {
+    "pixelThreshold": 30,
+    "blurRadius": 1.5,
+    "minRegionArea": 40,
+    "mergeDistance": 10
+  }
+}
