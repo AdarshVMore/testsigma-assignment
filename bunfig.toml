@@ -1,0 +1,8 @@
+# `bun test` with no arguments scans the whole repo tree by filename
+# pattern (*.test.* / *.spec.*) — which would also match
+# examples/self-healing/demo.spec.ts, a @playwright/test file that can only
+# be run by Playwright's own test runner (bunx playwright test), not bun's.
+# Scoping bun test's default root to packages/ keeps `bun test` (bare) safe
+# to run from the repo root without needing to remember an explicit path.
+[test]
+root = "packages"

@@ -32,3 +32,14 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# Python (packages/visual-regression)
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+*.egg-info/
+
+# Playwright artifacts (not the committed examples/self-healing/output/ screenshots)
+test-results/
+playwright-report/

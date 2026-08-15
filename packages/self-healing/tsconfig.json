@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    // This package's evaluate() callbacks run inside a real browser page
+    // (via Playwright), so DOM types are needed on top of the root
+    // Bun-flavored config.
+    "lib": ["ESNext", "DOM"]
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts", "playwright.config.ts"]
+}
