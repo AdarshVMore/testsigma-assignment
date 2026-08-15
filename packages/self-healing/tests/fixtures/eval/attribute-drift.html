@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+  Scenario: id, class AND the aria-label wording all drifted (a copywriter
+  tweaked the accessible label too), but the visible button text stayed the
+  same. A harder case than id-class-renamed: expect HEALED, but at a
+  visibly lower score since fewer signals still match exactly.
+-->
+<html>
+  <body>
+    <div class="checkout-panel">
+      <button
+        data-expected="true"
+        id="checkout-cta-v3"
+        class="cta cta--large"
+        aria-label="Complete your purchase now"
+      >
+        Submit Order
+      </button>
+    </div>
+  </body>
+</html>

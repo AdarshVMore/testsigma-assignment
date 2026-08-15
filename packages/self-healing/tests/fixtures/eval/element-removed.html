@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+  Scenario: the "Submit Order" button was genuinely removed from the page
+  (e.g. the checkout flow was redesigned to auto-submit). Nothing on the page
+  resembles it. Expect: FAILED — every candidate should fall below the
+  failure floor, and the tool must not force a bad match.
+-->
+<html>
+  <body>
+    <header>
+      <nav>
+        <a href="/home">Home</a>
+        <a href="/account">My Account</a>
+      </nav>
+    </header>
+    <main>
+      <p>Your order has already been submitted automatically.</p>
+      <a href="/orders" class="link-secondary">View order status</a>
+    </main>
+  </body>
+</html>

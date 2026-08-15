@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+  Scenario: a table of identical rows, each with a "Delete" button. The
+  original test targeted #row-2-delete, which no longer exists (row ids were
+  regenerated). Every row's delete button has identical text/tag/role, so
+  nothing distinguishes them well enough to guess safely.
+  Expect: AMBIGUOUS — the tool should decline to pick one at random.
+-->
+<html>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>Row One</td>
+          <td><button id="r-9f1a-delete" class="btn-delete">Delete</button></td>
+        </tr>
+        <tr>
+          <td>Row Two</td>
+          <td><button id="r-9f1b-delete" class="btn-delete" data-expected="true">Delete</button></td>
+        </tr>
+        <tr>
+          <td>Row Three</td>
+          <td><button id="r-9f1c-delete" class="btn-delete">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

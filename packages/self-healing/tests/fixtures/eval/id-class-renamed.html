@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--
+  Scenario: a routine refactor renamed the submit button's id and class.
+  Text, type and DOM position are all untouched. Expect: HEALED, high score.
+-->
+<html>
+  <body>
+    <form>
+      <div class="form-row">
+        <input name="email" type="email" placeholder="you@example.com" />
+      </div>
+      <div class="form-actions">
+        <button data-expected="true" id="cta-submit-order" class="button button--primary-action" type="submit">
+          Submit Order
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
