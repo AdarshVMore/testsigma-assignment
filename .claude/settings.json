@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun install *)",
+      "Bash(bun run *)",
+      "Bash(python3 -m venv .venv)",
+      "Bash(.venv/bin/pip install *)",
+      "Bash(.venv/bin/pip list *)",
+      "Bash(.venv/bin/pytest --collect-only)",
+      "Bash(bun pm *)",
+      "Bash(bun test *)",
+      "Bash(tsc --noEmit -p packages/self-healing/tsconfig.json)",
+      "Bash(bunx playwright *)",
+      "Bash(tee examples/reporter/raw-run.log)",
+      "Bash(python3 -c ' *)",
+      "Bash(.venv/bin/pytest -v)",
+      "Bash(.venv/bin/python src/cli.py /Users/adarshvitthalmore/Code/testsigma-assignment/examples/visual-regression/before.png /Users/adarshvitthalmore/Code/testsigma-assignment/examples/visual-regression/after.png --output-dir /Users/adarshvitthalmore/Code/testsigma-assignment/examples/visual-regression/output)",
+      "Bash(echo \"exit code: $?\")",
+      "Bash(.venv/bin/python /Users/adarshvitthalmore/Code/testsigma-assignment/examples/visual-regression/generate_fixtures.py)",
+      "Bash(tsc --noEmit -p web/tsconfig.json)",
+      "Bash(bun --hot web/server.ts)",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:4300/ >/dev/null; do sleep 1; done')",
+      "Bash(curl -s http://localhost:4300/api/snapshot)",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/screenshot.ts \"http://localhost:4300\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/00-shell.png\" \"text=Workbench\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/screenshot.ts \"http://localhost:4300\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/01-overview.png\" \"text=Locator healing events\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/screenshot.ts \"http://localhost:4300/#/self-healing\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/02-self-healing.png\" \"text=Target fingerprint\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/screenshot.ts \"http://localhost:4300/#/self-healing\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/02b-self-healing-fixed.png\" \"text=Target fingerprint\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/screenshot.ts \"http://localhost:4300/#/visual-diff\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/03-visual-diff.png\" \"text=Regions\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/click-and-shoot.ts \"http://localhost:4300/#/visual-diff\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/03b-2up.png\" \"2-up\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/click-and-shoot.ts \"http://localhost:4300/#/visual-diff\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/03c-2up-fixed.png\" \"2-up\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/click-and-shoot.ts \"http://localhost:4300/#/visual-diff\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/03d-diff.png\" \"Diff\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/click-and-shoot.ts \"http://localhost:4300/#/reports\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/04a-reports.png\" \"example of a genuine failure \\(kept intentionally so the report shows a real red result\\)\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/screenshot.ts \"http://localhost:4300/#/test-runs\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/05-test-runs.png\" \"text=Test Runs\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/screenshot.ts \"http://localhost:4300/#/artifacts\" \"/private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/06-artifacts.png\" \"text=Test reporter\")",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/smoke-test.ts)",
+      "Bash(bun /private/tmp/claude-501/-Users-adarshvitthalmore-Code-testsigma-assignment/2f31da2e-fdbd-46b5-ae41-65da9188468e/scratchpad/mobile-check.ts)",
+      "Bash(lsof -ti:4300 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)"
+    ]
+  }
+}
