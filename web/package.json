@@ -1,0 +1,19 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot server.ts",
+    "collect": "bun run data/collect.ts"
+  },
+  "dependencies": {
+    "react": "^19",
+    "react-dom": "^19",
+    "playwright": "^1.62.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
+  }
+}

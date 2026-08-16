@@ -1,0 +1,13 @@
+.mono-value {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1px var(--space-1);
+  color: var(--text-primary);
+}
+
+.mono-value--muted {
+  color: var(--text-secondary);
+}

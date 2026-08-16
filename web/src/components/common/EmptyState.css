@@ -1,0 +1,17 @@
+.empty-state {
+  padding: var(--space-8);
+  text-align: center;
+  border: 1px dashed var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-tertiary);
+}
+
+.empty-state__title {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.empty-state__description {
+  font-size: var(--text-sm);
+}

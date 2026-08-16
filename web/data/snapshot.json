@@ -1,0 +1,1031 @@
+{
+  "generatedAt": "2026-08-15T21:54:18.764Z",
+  "selfHealing": {
+    "scenarios": [
+      {
+        "id": "legacy-submit-button",
+        "title": "Legacy submit button (live demo)",
+        "description": "The scenario exercised by examples/self-healing/demo.spec.ts: a decoy 'Save Draft' button sits next to the real target, proving healing doesn't just grab the first plausible element on the page.",
+        "originalSelector": "#legacy-submit-btn",
+        "source": "examples/self-healing/demo.spec.ts",
+        "outcome": "healed",
+        "score": 0.867,
+        "margin": 0.5,
+        "candidatesConsidered": 2,
+        "target": {
+          "tag": "button",
+          "text": "Submit Order",
+          "ariaLabel": null,
+          "role": "button",
+          "name": null,
+          "placeholder": null,
+          "type": "submit",
+          "id": "legacy-submit-btn",
+          "classList": [
+            "btn-legacy"
+          ],
+          "attributes": {},
+          "domContext": {
+            "parentTag": "form",
+            "ancestorTags": [
+              "form",
+              "body",
+              "html"
+            ],
+            "siblingIndex": 1,
+            "siblingCount": 2
+          }
+        },
+        "targetOuterHtml": "<button id=\"legacy-submit-btn\" class=\"btn-legacy\" type=\"submit\">Submit Order</button>",
+        "candidates": [
+          {
+            "id": "legacy-submit-button-c1",
+            "outerHtml": "<button id=\"cta-2024-submit\" class=\"button-refactored primary-refactored\" type=\"submit\">Submit Order</button>",
+            "fingerprint": {
+              "tag": "button",
+              "text": "Submit Order",
+              "ariaLabel": null,
+              "role": "button",
+              "name": null,
+              "placeholder": null,
+              "type": "submit",
+              "id": "cta-2024-submit",
+              "classList": [
+                "button-refactored",
+                "primary-refactored"
+              ],
+              "attributes": {},
+              "domContext": {
+                "parentTag": "form",
+                "ancestorTags": [
+                  "form",
+                  "body",
+                  "html"
+                ],
+                "siblingIndex": 1,
+                "siblingCount": 2
+              }
+            },
+            "score": {
+              "total": 0.867,
+              "signals": [
+                {
+                  "signal": "text",
+                  "weight": 0.25,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.25,
+                  "detail": "target=\"Submit Order\" candidate=\"Submit Order\""
+                },
+                {
+                  "signal": "ariaLabel",
+                  "weight": 0.15,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target=\"\" candidate=\"\""
+                },
+                {
+                  "signal": "role",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "tag",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "classList",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": true,
+                  "contribution": 0,
+                  "detail": "target=[btn-legacy] candidate=[button-refactored primary-refactored]"
+                },
+                {
+                  "signal": "formAttributes",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "1/1 of name/placeholder/type matched"
+                },
+                {
+                  "signal": "otherAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target has no data-* / stable attributes to match"
+                },
+                {
+                  "signal": "domContext",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "ancestorMatch=1.00 positionMatch=1.00"
+                }
+              ]
+            }
+          },
+          {
+            "id": "legacy-submit-button-c0",
+            "outerHtml": "<button id=\"save-draft-btn\" class=\"btn-secondary\" type=\"button\">Save Draft</button>",
+            "fingerprint": {
+              "tag": "button",
+              "text": "Save Draft",
+              "ariaLabel": null,
+              "role": "button",
+              "name": null,
+              "placeholder": null,
+              "type": "button",
+              "id": "save-draft-btn",
+              "classList": [
+                "btn-secondary"
+              ],
+              "attributes": {},
+              "domContext": {
+                "parentTag": "form",
+                "ancestorTags": [
+                  "form",
+                  "body",
+                  "html"
+                ],
+                "siblingIndex": 0,
+                "siblingCount": 2
+              }
+            },
+            "score": {
+              "total": 0.367,
+              "signals": [
+                {
+                  "signal": "text",
+                  "weight": 0.25,
+                  "value": 0,
+                  "applicable": true,
+                  "contribution": 0,
+                  "detail": "target=\"Submit Order\" candidate=\"Save Draft\""
+                },
+                {
+                  "signal": "ariaLabel",
+                  "weight": 0.15,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target=\"\" candidate=\"\""
+                },
+                {
+                  "signal": "role",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "tag",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "classList",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": true,
+                  "contribution": 0,
+                  "detail": "target=[btn-legacy] candidate=[btn-secondary]"
+                },
+                {
+                  "signal": "formAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": true,
+                  "contribution": 0,
+                  "detail": "0/1 of name/placeholder/type matched"
+                },
+                {
+                  "signal": "otherAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target has no data-* / stable attributes to match"
+                },
+                {
+                  "signal": "domContext",
+                  "weight": 0.1,
+                  "value": 0.75,
+                  "applicable": true,
+                  "contribution": 0.075,
+                  "detail": "ancestorMatch=1.00 positionMatch=0.50"
+                }
+              ]
+            }
+          }
+        ],
+        "winningCandidateId": "legacy-submit-button-c1"
+      },
+      {
+        "id": "id-class-rename",
+        "title": "Clean id/class rename",
+        "description": "A routine refactor renamed the submit button's id and class. Text, type and DOM position are untouched.",
+        "originalSelector": "#cta-submit-order",
+        "source": "packages/self-healing/tests/fixtures/eval/id-class-renamed.html",
+        "outcome": "healed",
+        "score": 0.867,
+        "margin": 0.867,
+        "candidatesConsidered": 1,
+        "target": {
+          "tag": "button",
+          "text": "Submit Order",
+          "ariaLabel": null,
+          "role": "button",
+          "name": null,
+          "placeholder": null,
+          "type": "submit",
+          "id": null,
+          "classList": [
+            "old-cta",
+            "old-primary"
+          ],
+          "attributes": {},
+          "domContext": {
+            "parentTag": "div",
+            "ancestorTags": [
+              "div",
+              "form",
+              "body",
+              "html"
+            ],
+            "siblingIndex": 0,
+            "siblingCount": 1
+          }
+        },
+        "candidates": [
+          {
+            "id": "id-class-rename-c0",
+            "outerHtml": "<button data-expected=\"true\" id=\"cta-submit-order\" class=\"button button--primary-action\" type=\"submit\">\n          Submit Order\n        </button>",
+            "fingerprint": {
+              "tag": "button",
+              "text": "Submit Order",
+              "ariaLabel": null,
+              "role": "button",
+              "name": null,
+              "placeholder": null,
+              "type": "submit",
+              "id": "cta-submit-order",
+              "classList": [
+                "button",
+                "button--primary-action"
+              ],
+              "attributes": {
+                "data-expected": "true"
+              },
+              "domContext": {
+                "parentTag": "div",
+                "ancestorTags": [
+                  "div",
+                  "form",
+                  "body",
+                  "html"
+                ],
+                "siblingIndex": 0,
+                "siblingCount": 1
+              }
+            },
+            "score": {
+              "total": 0.867,
+              "signals": [
+                {
+                  "signal": "text",
+                  "weight": 0.25,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.25,
+                  "detail": "target=\"Submit Order\" candidate=\"Submit Order\""
+                },
+                {
+                  "signal": "ariaLabel",
+                  "weight": 0.15,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target=\"\" candidate=\"\""
+                },
+                {
+                  "signal": "role",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "tag",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "classList",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": true,
+                  "contribution": 0,
+                  "detail": "target=[old-cta old-primary] candidate=[button button--primary-action]"
+                },
+                {
+                  "signal": "formAttributes",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "1/1 of name/placeholder/type matched"
+                },
+                {
+                  "signal": "otherAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target has no data-* / stable attributes to match"
+                },
+                {
+                  "signal": "domContext",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "ancestorMatch=1.00 positionMatch=1.00"
+                }
+              ]
+            }
+          }
+        ],
+        "winningCandidateId": "id-class-rename-c0"
+      },
+      {
+        "id": "attribute-drift",
+        "title": "Attribute drift",
+        "description": "id, class AND the aria-label wording all drifted — a copywriter tweaked the accessible label too. Only the visible text held steady.",
+        "originalSelector": "#checkout-cta-v2",
+        "source": "packages/self-healing/tests/fixtures/eval/attribute-drift.html",
+        "outcome": "healed",
+        "score": 0.719,
+        "margin": 0.719,
+        "candidatesConsidered": 1,
+        "target": {
+          "tag": "button",
+          "text": "Submit Order",
+          "ariaLabel": "Submit your order",
+          "role": "button",
+          "name": null,
+          "placeholder": null,
+          "type": null,
+          "id": null,
+          "classList": [
+            "btn-checkout",
+            "btn-large"
+          ],
+          "attributes": {},
+          "domContext": {
+            "parentTag": "div",
+            "ancestorTags": [
+              "div",
+              "body",
+              "html"
+            ],
+            "siblingIndex": 0,
+            "siblingCount": 1
+          }
+        },
+        "candidates": [
+          {
+            "id": "attribute-drift-c0",
+            "outerHtml": "<button data-expected=\"true\" id=\"checkout-cta-v3\" class=\"cta cta--large\" aria-label=\"Complete your purchase now\">\n        Submit Order\n      </button>",
+            "fingerprint": {
+              "tag": "button",
+              "text": "Submit Order",
+              "ariaLabel": "Complete your purchase now",
+              "role": "button",
+              "name": null,
+              "placeholder": null,
+              "type": null,
+              "id": "checkout-cta-v3",
+              "classList": [
+                "cta",
+                "cta--large"
+              ],
+              "attributes": {
+                "data-expected": "true"
+              },
+              "domContext": {
+                "parentTag": "div",
+                "ancestorTags": [
+                  "div",
+                  "body",
+                  "html"
+                ],
+                "siblingIndex": 0,
+                "siblingCount": 1
+              }
+            },
+            "score": {
+              "total": 0.719,
+              "signals": [
+                {
+                  "signal": "text",
+                  "weight": 0.25,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.25,
+                  "detail": "target=\"Submit Order\" candidate=\"Submit Order\""
+                },
+                {
+                  "signal": "ariaLabel",
+                  "weight": 0.15,
+                  "value": 0.16666666666666666,
+                  "applicable": true,
+                  "contribution": 0.025,
+                  "detail": "target=\"Submit your order\" candidate=\"Complete your purchase now\""
+                },
+                {
+                  "signal": "role",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "tag",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "classList",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": true,
+                  "contribution": 0,
+                  "detail": "target=[btn-checkout btn-large] candidate=[cta cta--large]"
+                },
+                {
+                  "signal": "formAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "0/0 of name/placeholder/type matched"
+                },
+                {
+                  "signal": "otherAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target has no data-* / stable attributes to match"
+                },
+                {
+                  "signal": "domContext",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "ancestorMatch=1.00 positionMatch=1.00"
+                }
+              ]
+            }
+          }
+        ],
+        "winningCandidateId": "attribute-drift-c0"
+      },
+      {
+        "id": "ambiguous-duplicates",
+        "title": "Ambiguous duplicates",
+        "description": "A table of identical rows, each with a Delete button. The target row's id changed, but every row's button is structurally identical — nothing safely distinguishes them.",
+        "originalSelector": "#row-2-delete",
+        "source": "packages/self-healing/tests/fixtures/eval/ambiguous-duplicates.html",
+        "outcome": "ambiguous",
+        "score": 1,
+        "margin": 0,
+        "candidatesConsidered": 3,
+        "target": {
+          "tag": "button",
+          "text": "Delete",
+          "ariaLabel": null,
+          "role": "button",
+          "name": null,
+          "placeholder": null,
+          "type": null,
+          "id": null,
+          "classList": [
+            "btn-delete"
+          ],
+          "attributes": {},
+          "domContext": {
+            "parentTag": "td",
+            "ancestorTags": [
+              "td",
+              "tr",
+              "tbody",
+              "table"
+            ],
+            "siblingIndex": 0,
+            "siblingCount": 1
+          }
+        },
+        "candidates": [
+          {
+            "id": "ambiguous-duplicates-c0",
+            "outerHtml": "<button id=\"r-9f1a-delete\" class=\"btn-delete\">Delete</button>",
+            "fingerprint": {
+              "tag": "button",
+              "text": "Delete",
+              "ariaLabel": null,
+              "role": "button",
+              "name": null,
+              "placeholder": null,
+              "type": null,
+              "id": "r-9f1a-delete",
+              "classList": [
+                "btn-delete"
+              ],
+              "attributes": {},
+              "domContext": {
+                "parentTag": "td",
+                "ancestorTags": [
+                  "td",
+                  "tr",
+                  "tbody",
+                  "table"
+                ],
+                "siblingIndex": 0,
+                "siblingCount": 1
+              }
+            },
+            "score": {
+              "total": 1,
+              "signals": [
+                {
+                  "signal": "text",
+                  "weight": 0.25,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.25,
+                  "detail": "target=\"Delete\" candidate=\"Delete\""
+                },
+                {
+                  "signal": "ariaLabel",
+                  "weight": 0.15,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target=\"\" candidate=\"\""
+                },
+                {
+                  "signal": "role",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "tag",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "classList",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=[btn-delete] candidate=[btn-delete]"
+                },
+                {
+                  "signal": "formAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "0/0 of name/placeholder/type matched"
+                },
+                {
+                  "signal": "otherAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target has no data-* / stable attributes to match"
+                },
+                {
+                  "signal": "domContext",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "ancestorMatch=1.00 positionMatch=1.00"
+                }
+              ]
+            }
+          },
+          {
+            "id": "ambiguous-duplicates-c1",
+            "outerHtml": "<button id=\"r-9f1b-delete\" class=\"btn-delete\" data-expected=\"true\">Delete</button>",
+            "fingerprint": {
+              "tag": "button",
+              "text": "Delete",
+              "ariaLabel": null,
+              "role": "button",
+              "name": null,
+              "placeholder": null,
+              "type": null,
+              "id": "r-9f1b-delete",
+              "classList": [
+                "btn-delete"
+              ],
+              "attributes": {
+                "data-expected": "true"
+              },
+              "domContext": {
+                "parentTag": "td",
+                "ancestorTags": [
+                  "td",
+                  "tr",
+                  "tbody",
+                  "table"
+                ],
+                "siblingIndex": 0,
+                "siblingCount": 1
+              }
+            },
+            "score": {
+              "total": 1,
+              "signals": [
+                {
+                  "signal": "text",
+                  "weight": 0.25,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.25,
+                  "detail": "target=\"Delete\" candidate=\"Delete\""
+                },
+                {
+                  "signal": "ariaLabel",
+                  "weight": 0.15,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target=\"\" candidate=\"\""
+                },
+                {
+                  "signal": "role",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "tag",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "classList",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=[btn-delete] candidate=[btn-delete]"
+                },
+                {
+                  "signal": "formAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "0/0 of name/placeholder/type matched"
+                },
+                {
+                  "signal": "otherAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target has no data-* / stable attributes to match"
+                },
+                {
+                  "signal": "domContext",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "ancestorMatch=1.00 positionMatch=1.00"
+                }
+              ]
+            }
+          },
+          {
+            "id": "ambiguous-duplicates-c2",
+            "outerHtml": "<button id=\"r-9f1c-delete\" class=\"btn-delete\">Delete</button>",
+            "fingerprint": {
+              "tag": "button",
+              "text": "Delete",
+              "ariaLabel": null,
+              "role": "button",
+              "name": null,
+              "placeholder": null,
+              "type": null,
+              "id": "r-9f1c-delete",
+              "classList": [
+                "btn-delete"
+              ],
+              "attributes": {},
+              "domContext": {
+                "parentTag": "td",
+                "ancestorTags": [
+                  "td",
+                  "tr",
+                  "tbody",
+                  "table"
+                ],
+                "siblingIndex": 0,
+                "siblingCount": 1
+              }
+            },
+            "score": {
+              "total": 1,
+              "signals": [
+                {
+                  "signal": "text",
+                  "weight": 0.25,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.25,
+                  "detail": "target=\"Delete\" candidate=\"Delete\""
+                },
+                {
+                  "signal": "ariaLabel",
+                  "weight": 0.15,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target=\"\" candidate=\"\""
+                },
+                {
+                  "signal": "role",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "tag",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=button candidate=button"
+                },
+                {
+                  "signal": "classList",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "target=[btn-delete] candidate=[btn-delete]"
+                },
+                {
+                  "signal": "formAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "0/0 of name/placeholder/type matched"
+                },
+                {
+                  "signal": "otherAttributes",
+                  "weight": 0.1,
+                  "value": 0,
+                  "applicable": false,
+                  "contribution": 0,
+                  "detail": "target has no data-* / stable attributes to match"
+                },
+                {
+                  "signal": "domContext",
+                  "weight": 0.1,
+                  "value": 1,
+                  "applicable": true,
+                  "contribution": 0.1,
+                  "detail": "ancestorMatch=1.00 positionMatch=1.00"
+                }
+              ]
+            }
+          }
+        ],
+        "winningCandidateId": null
+      },
+      {
+        "id": "element-removed",
+        "title": "Element genuinely removed",
+        "description": "The checkout flow was redesigned to auto-submit — the button was actually deleted from the page, not just renamed.",
+        "originalSelector": "#legacy-submit-order-btn",
+        "source": "packages/self-healing/tests/fixtures/eval/element-removed.html",
+        "outcome": "failed",
+        "score": null,
+        "margin": null,
+        "candidatesConsidered": 0,
+        "target": {
+          "tag": "button",
+          "text": "Submit Order",
+          "ariaLabel": null,
+          "role": "button",
+          "name": null,
+          "placeholder": null,
+          "type": "submit",
+          "id": null,
+          "classList": [
+            "old-cta"
+          ],
+          "attributes": {},
+          "domContext": {
+            "parentTag": null,
+            "ancestorTags": [],
+            "siblingIndex": 0,
+            "siblingCount": 1
+          }
+        },
+        "candidates": [],
+        "winningCandidateId": null
+      }
+    ]
+  },
+  "visualRegression": {
+    "passed": false,
+    "diffPercentage": 10.2375,
+    "dimensionMismatch": false,
+    "beforeSize": [
+      400,
+      260
+    ],
+    "afterSize": [
+      400,
+      260
+    ],
+    "regions": [
+      {
+        "x": 39,
+        "y": 194,
+        "width": 323,
+        "height": 33,
+        "pixelCount": 10647
+      }
+    ],
+    "config": {
+      "pixelThreshold": 30,
+      "blurRadius": 1.5,
+      "minRegionArea": 40,
+      "mergeDistance": 10
+    },
+    "images": {
+      "before": "examples/visual-regression/before.png",
+      "after": "examples/visual-regression/after.png",
+      "diff": "examples/visual-regression/output/diff.png",
+      "highlighted": "examples/visual-regression/output/highlighted.png"
+    }
+  },
+  "testRun": {
+    "id": "demo-spec-run",
+    "label": "examples/self-healing/demo.spec.ts",
+    "source": "examples/reporter/raw-run.log",
+    "results": [
+      {
+        "name": "self-healing locator survives an id/class rename after a simulated deploy",
+        "status": "passed",
+        "duration": 504,
+        "screenshot": "examples/self-healing/output/03-after-heal-and-click.png"
+      },
+      {
+        "name": "self-healing reports ambiguous instead of guessing among duplicate candidates",
+        "status": "passed",
+        "duration": 72
+      },
+      {
+        "name": "example of a genuine failure (kept intentionally so the report shows a real red result)",
+        "status": "failed",
+        "duration": 1000,
+        "error": "Error: expect(locator).toHaveText(expected) failed\n\n    Locator:  locator('#only-btn')\n    Expected: \"Wrong Expected Text\"\n    Received: \"Only Button\"\n    Timeout:  1000ms\n\n    Call log:\n      - Expect \"toHaveText\" with timeout 1000ms\n      - waiting for locator('#only-btn')\n        11 × locator resolved to <button id=\"only-btn\">Only Button</button>\n           - unexpected value \"Only Button\"\n\n\n      104 | test(\"example of a genuine failure (kept intentionally so the report shows a real red result)\", async ({ page }) => {\n      105 |   await page.setContent(`<button id=\"only-btn\">Only Button</button>`);\n    > 106 |   await expect(page.locator(\"#only-btn\")).toHaveText(\"Wrong Expected Text\", { timeout: 1000 });\n          |                                           ^\n      107 | });\n      108 |\n      109 | test.skip(\"example of a skipped test (kept intentionally so the report shows a real skip)\", async () => {\n        at /Users/adarshvitthalmore/Code/testsigma-assignment/examples/self-healing/demo.spec.ts:106:43\n\n    Error Context: packages/self-healing/test-results/demo-example-of-a-genuine--422af-rt-shows-a-real-red-result-/error-context.md"
+      },
+      {
+        "name": "example of a skipped test (kept intentionally so the report shows a real skip)",
+        "status": "skipped"
+      }
+    ],
+    "summary": {
+      "total": 4,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 1,
+      "totalDurationMs": 1576,
+      "passRate": 0.6666666666666666
+    }
+  },
+  "artifacts": [
+    {
+      "id": "sh-01",
+      "label": "Before rename",
+      "kind": "screenshot",
+      "path": "examples/self-healing/output/01-before-rename.png",
+      "sourceScreen": "self-healing"
+    },
+    {
+      "id": "sh-02",
+      "label": "After rename, before heal",
+      "kind": "screenshot",
+      "path": "examples/self-healing/output/02-after-rename-before-heal.png",
+      "sourceScreen": "self-healing"
+    },
+    {
+      "id": "sh-03",
+      "label": "After heal + click",
+      "kind": "screenshot",
+      "path": "examples/self-healing/output/03-after-heal-and-click.png",
+      "sourceScreen": "self-healing"
+    },
+    {
+      "id": "vr-before",
+      "label": "Baseline screenshot",
+      "kind": "screenshot",
+      "path": "examples/visual-regression/before.png",
+      "sourceScreen": "visual-diff"
+    },
+    {
+      "id": "vr-after",
+      "label": "Current screenshot",
+      "kind": "screenshot",
+      "path": "examples/visual-regression/after.png",
+      "sourceScreen": "visual-diff"
+    },
+    {
+      "id": "vr-diff",
+      "label": "Diff heatmap",
+      "kind": "diff-image",
+      "path": "examples/visual-regression/output/diff.png",
+      "sourceScreen": "visual-diff"
+    },
+    {
+      "id": "vr-highlighted",
+      "label": "Highlighted regions",
+      "kind": "diff-image",
+      "path": "examples/visual-regression/output/highlighted.png",
+      "sourceScreen": "visual-diff"
+    },
+    {
+      "id": "vr-result",
+      "label": "Comparison result",
+      "kind": "json",
+      "path": "examples/visual-regression/output/result.json",
+      "sourceScreen": "visual-diff"
+    },
+    {
+      "id": "rp-log",
+      "label": "Raw Playwright stdout",
+      "kind": "log",
+      "path": "examples/reporter/raw-run.log",
+      "sourceScreen": "reports"
+    },
+    {
+      "id": "rp-report",
+      "label": "Generated HTML report",
+      "kind": "report",
+      "path": "examples/reporter/output/report.html",
+      "sourceScreen": "reports"
+    }
+  ]
+}

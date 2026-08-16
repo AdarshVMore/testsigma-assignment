@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    // No rootDir override: data/collect.ts intentionally imports across
+    // package boundaries (../../packages/**) to reuse the real backend
+    // classes, so the inferred common root spans the whole repo.
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx"
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

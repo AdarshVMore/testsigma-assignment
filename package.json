@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "web"
   ],
   "scripts": {
     "typecheck": "tsc --noEmit -p packages/self-healing/tsconfig.json && tsc --noEmit -p packages/test-reporter/tsconfig.json",
@@ -11,7 +12,9 @@
     "test:self-healing": "bun test packages/self-healing",
     "test:reporter": "bun test packages/test-reporter",
     "demo:self-healing": "bunx playwright test --config packages/self-healing/playwright.config.ts",
-    "demo:reporter": "bun run examples/reporter/generate.ts"
+    "demo:reporter": "bun run examples/reporter/generate.ts",
+    "web:collect": "bun run web/data/collect.ts",
+    "web:dev": "bun --hot web/server.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
