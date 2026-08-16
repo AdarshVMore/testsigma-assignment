@@ -1,0 +1,28 @@
+.region-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.region-overlay__box {
+  position: absolute;
+  border: 2px solid var(--danger);
+  background: rgba(248, 81, 73, 0.08);
+  box-sizing: border-box;
+}
+
+/* Kept inside the box's top-left corner (not floated above it) — the box
+   position is arbitrary relative to unrelated page content, so anchoring
+   outside its own bounds risks overlapping something else on the image. */
+.region-overlay__label {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 0.6rem;
+  color: #fff;
+  background: var(--danger);
+  padding: 1px 4px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  line-height: 1.4;
+}
