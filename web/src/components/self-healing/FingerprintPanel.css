@@ -1,0 +1,27 @@
+.fingerprint-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.fingerprint-panel__row {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: var(--text-xs);
+}
+
+.fingerprint-panel__row:last-child {
+  border-bottom: none;
+}
+
+.fingerprint-panel__label {
+  width: 90px;
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+.fingerprint-panel__value {
+  color: var(--text-secondary);
+  word-break: break-word;
+}

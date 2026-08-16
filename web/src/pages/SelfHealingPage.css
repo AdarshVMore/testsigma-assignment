@@ -1,0 +1,122 @@
+.self-healing-page {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.healing-rail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  position: sticky;
+  top: 0;
+}
+
+.healing-rail__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.healing-rail__item:hover {
+  background: var(--bg-surface);
+}
+
+.healing-rail__item--active {
+  background: var(--bg-surface);
+  border-color: var(--border-default);
+}
+
+.healing-rail__title {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  max-width: 180px;
+}
+
+.healing-detail__intro {
+  margin-bottom: var(--space-4);
+}
+
+.healing-detail__title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.healing-detail__description {
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  max-width: 720px;
+}
+
+.healing-detail__source {
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--text-disabled);
+}
+
+.decision-strip {
+  display: flex;
+  gap: var(--space-6);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.decision-strip__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.decision-strip__label {
+  font-size: 0.68rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.decision-strip__value {
+  font-size: var(--text-md);
+  color: var(--text-primary);
+}
+
+.healing-detail__columns {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.healing-detail__target-html {
+  padding: var(--space-3);
+  border-top: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 1100px) {
+  .self-healing-page {
+    grid-template-columns: 1fr;
+  }
+  .healing-rail {
+    flex-direction: row;
+    overflow-x: auto;
+    position: static;
+  }
+  .healing-detail__columns {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,26 @@
+.dom-snippet {
+  margin: 0;
+  padding: var(--space-3);
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--text-secondary);
+}
+
+.dom-snippet__tag {
+  color: var(--accent);
+}
+
+.dom-snippet__attr {
+  color: #d29922;
+}
+
+.dom-snippet__value {
+  color: var(--success);
+}
